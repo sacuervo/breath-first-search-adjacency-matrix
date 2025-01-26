@@ -1,9 +1,11 @@
 package me.santiagocuervo;
+
 import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<GraphNode> nodeList = new ArrayList<>(){}; 
+        ArrayList<GraphNode> nodeList = new ArrayList<>() {
+        };
 
         nodeList.add(new GraphNode("A", 0));
         nodeList.add(new GraphNode("B", 1));
@@ -19,12 +21,12 @@ public class Main {
         g.addUndirectedEdge(0, 3);
 
         // B Node edges
-        g.addUndirectedEdge(1, 3);
+        g.addUndirectedEdge(1, 4);
 
         // C Node edges
         g.addUndirectedEdge(2, 3);
 
-        // D Node edges 
+        // D Node edges
         g.addUndirectedEdge(3, 4);
 
         g.printAdjacencyMatrix();
