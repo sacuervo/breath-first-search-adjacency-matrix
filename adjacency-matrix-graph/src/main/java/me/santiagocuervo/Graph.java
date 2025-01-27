@@ -28,6 +28,15 @@ public class Graph {
         }
     }
 
+    // Main BFS (Calls the other BFS method with main functionality)
+    public void bfs() {
+        for (GraphNode node : nodeList) {
+            if (!node.isVisited) {
+                bfsVisit(node);
+            }
+        }
+    }
+
     // get neighbors
     public ArrayList<GraphNode> getNeighbors(GraphNode node) {
         ArrayList<GraphNode> neighbors = new ArrayList<>();
@@ -42,7 +51,7 @@ public class Graph {
         return neighbors;
     }
 
-    // BFS internal
+    // BFS internal (Main funcionality)
     void bfsVisit(GraphNode node) {
         LinkedList<GraphNode> queue = new LinkedList<>();
         queue.add(node);
