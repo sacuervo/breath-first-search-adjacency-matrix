@@ -1,6 +1,7 @@
 package me.santiagocuervo;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Graph {
     ArrayList<GraphNode> nodeList;
@@ -39,5 +40,24 @@ public class Graph {
         }
 
         return neighbors;
+    }
+
+    // BFS internal
+    void bfsVisit(GraphNode node) {
+        LinkedList<GraphNode> queue = new LinkedList<>();
+        queue.add(node);
+
+        while (!queue.isEmpty()) {
+            GraphNode currentNode = queue.remove(0);
+            currentNode.isVisited = true;
+            System.out.print(currentNode.name + " ");
+            ArrayList<GraphNode> neighbors = getNeighbors(currentNode);
+            for (GraphNode neighbor : neighbors) {
+                if (!neighbor.isVisited) {
+                    queue.add(neighbor);
+                }
+            }
+        }
+
     }
 }
